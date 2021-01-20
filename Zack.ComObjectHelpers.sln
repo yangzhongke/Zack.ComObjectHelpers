@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zack.ComObjectHelpers", "Zack.ComObjectHelpers\Zack.ComObjectHelpers.csproj", "{EA65A17E-A10A-43AC-AEFC-7F6F52FA0822}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{A7F85ABF-F71C-441E-9853-FEDF3F75E4B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{A7F85ABF-F71C-441E-9853-FEDF3F75E4B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

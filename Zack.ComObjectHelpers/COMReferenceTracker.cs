@@ -24,6 +24,9 @@ namespace Zack.ComObjectHelpers
                 Marshal.FinalReleaseComObject(obj);
             }
             GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
     }
 }
