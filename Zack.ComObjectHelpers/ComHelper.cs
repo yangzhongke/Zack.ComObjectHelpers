@@ -16,7 +16,7 @@ namespace Zack.ComObjectHelpers
 
         public static object CreateInstanceFromProgID(string progID, bool throwOnError=true)
         {
-            Type type = Type.GetTypeFromProgID("PowerPoint.Application", throwOnError);
+            Type type = Type.GetTypeFromProgID(progID, throwOnError);
             return Activator.CreateInstance(type);
         }
 
@@ -29,6 +29,8 @@ namespace Zack.ComObjectHelpers
             StringBuilder sb = new StringBuilder();
             sb.Append("TypeName:").AppendLine(TypeDescriptor.GetClassName(comObject));
             sb.AppendLine("Properties:");
+            //https://github.com/dotnet/runtime/issues/47248
+            //TypeDescriptor.GetProperties depends on System.Windows.Forms
             foreach (PropertyDescriptor p in TypeDescriptor.GetProperties(comObject))
             {
                 sb.AppendLine($"Name:{p.Name},DisplayName:{p.DisplayName},PropertyType:{p.PropertyType}");

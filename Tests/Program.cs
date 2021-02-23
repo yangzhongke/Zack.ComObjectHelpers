@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Runtime.InteropServices;
 using Zack.ComObjectHelpers;
 
 namespace Tests
@@ -31,7 +30,7 @@ namespace Tests
                     slide.Export(@$"{workDir}\{i}.png", "PNG");
                     i++;
                 }*/
-                //用foreach在Debug模式powerpoint不会退出
+                //In debug mode, the Powerpoint instance will not exit if foreach is used
                 //https://github.com/dotnet/runtime/issues/47249
                 for (int i= 0;i < slides.Count;i++)
                 {

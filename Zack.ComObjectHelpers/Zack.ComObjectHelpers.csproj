@@ -5,6 +5,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/yangzhongke/Zack.ComObjectHelpers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/yangzhongke/Zack.ComObjectHelpers</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

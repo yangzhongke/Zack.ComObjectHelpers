@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace Zack.ComObjectHelpers
@@ -23,8 +24,6 @@ namespace Zack.ComObjectHelpers
             {
                 Marshal.FinalReleaseComObject(obj);
             }
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
             GC.Collect();
             GC.WaitForPendingFinalizers();
         }
