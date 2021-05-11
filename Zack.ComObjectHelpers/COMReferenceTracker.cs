@@ -11,6 +11,10 @@ namespace Zack.ComObjectHelpers
 
         public dynamic T(dynamic obj)
         {
+            if(Marshal.IsComObject(obj)==false)
+            {
+                throw new ArgumentException("obj is not a ComObject.");
+            }
             lock (objects)
             {
                 objects.Add(obj);
@@ -22,7 +26,14 @@ namespace Zack.ComObjectHelpers
         {
             foreach (var obj in objects)
             {
-                Marshal.FinalReleaseComObject(obj);
+                try
+                {
+                    Marshal.FinalReleaseComObject(obj);
+                }
+                catch(InvalidComObjectException ex)
+                {
+                    Debug.WriteLine(ex);
+                }
             }
             GC.Collect();
             GC.WaitForPendingFinalizers();
