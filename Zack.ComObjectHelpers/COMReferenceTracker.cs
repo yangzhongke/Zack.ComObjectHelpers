@@ -34,6 +34,10 @@ namespace Zack.ComObjectHelpers
                 {
                     Debug.WriteLine(ex);
                 }
+                catch (COMException ex)
+                {
+                    Debug.WriteLine(ex);
+                }
             }
             GC.Collect();
             GC.WaitForPendingFinalizers();
